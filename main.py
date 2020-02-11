@@ -2,37 +2,42 @@ from display import *
 from draw import *
 
 s = new_screen()
-c = [ 0, 255, 0 ]
+c = [ 255, 255, 0 ]
 
-#octants 1 and 5
-draw_line(0, 0, XRES-1, YRES-1, s, c)
-draw_line(0, 0, XRES-1, YRES // 2, s, c)
-draw_line(XRES-1, YRES-1, 0, YRES // 2, s, c)
-#
-# #octants 8 and 4
-c[BLUE] = 255;
-draw_line(0, YRES-1, XRES-1, 0, s, c);
-draw_line(0, YRES-1, XRES-1, YRES//2, s, c);
-draw_line(XRES-1, 0, 0, YRES//2, s, c);
-#
-# #octants 2 and 6
-c[RED] = 255;
-c[GREEN] = 0;
-c[BLUE] = 0;
-draw_line(0, 0, XRES//2, YRES-1, s, c);
-draw_line(XRES-1, YRES-1, XRES//2, 0, s, c);
-#
-# #octants 7 and 3
-c[BLUE] = 255;
-draw_line(0, YRES-1, XRES//2, 0, s, c);
-draw_line(XRES-1, 0, XRES//2, YRES-1, s, c);
-#
-# #horizontal and vertical
-c[BLUE] = 0;
-c[GREEN] = 255;
-draw_line(0, YRES//2, XRES-1, YRES//2, s, c);
-draw_line(XRES//2, 0, XRES//2, YRES-1, s, c);
+draw_line(425, 250, 375, 300, s, c)
+draw_line(375, 300, 325, 325, s, c)
+draw_line(325, 325, 325, 300, s, c)
+draw_line(325, 300, 300, 275, s, c)
+draw_line(275, 275, 300, 275, s, c)
+draw_line(275, 275, 270, 325, s, c)
+draw_line(270, 325, 262, 305, s, c)
+draw_line(238, 305, 262, 305, s, c)
+draw_line(238, 305, 230, 325, s, c)
+draw_line(230, 325, 225, 275, s, c)
 
+draw_line(75, 250, 125, 300, s, c)
+draw_line(125, 300, 175, 325, s, c)
+draw_line(175, 325, 175, 300, s, c)
+draw_line(175, 300, 200, 275, s, c)
+draw_line(200, 275, 225, 275, s, c)
+
+draw_line(425, 250, 400, 212, s, c)
+draw_line(75, 250, 100, 212, s, c)
+
+draw_line(400, 212, 350, 187, s, c)
+draw_line(100, 212, 150, 187, s, c)
+
+draw_line(350, 187, 325, 217, s, c)
+draw_line(325, 217, 300, 192, s, c)
+
+draw_line(300, 192, 282, 212, s, c)
+draw_line(282, 212, 250, 175, s, c)
+
+draw_line(250, 175, 218, 212, s, c)
+draw_line(218, 212, 200, 192, s, c)
+
+draw_line(200, 192, 175, 217, s, c)
+draw_line(175, 217, 150, 187, s, c)
 
 display(s)
 save_ppm(s, 'binary.ppm')
